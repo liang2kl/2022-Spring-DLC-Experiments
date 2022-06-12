@@ -1,0 +1,75 @@
+\documentclass[a4paper]{article}
+\usepackage{ctex}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+
+\pagestyle{headings}
+
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+
+\begin{document}
+\title{示波器实验}
+\author{梁业升 2019010547（计03）}
+
+\maketitle
+
+\section{实验目的}
+
+\begin{enumerate}
+    \item 熟悉示波器的使用，包括探头校准，探头衰减常数设置，示波器的控制、测量与结果保存，以及内置信号发生器的使用。
+    \item 学会生成并测量特定频率、幅度的正弦、TTL 方波、三角波等常见波形。
+\end{enumerate}
+
+\section{实验内容及要求}
+
+用示波器生成下列三种波形：
+
+\begin{enumerate}
+    \item 100kHz 正弦波，占空比 50\%，直流电平为零，峰峰值 4V；
+    \item 1MHz TTL 方波，占空比 50\%；
+    \item 100Hz，0-5V 三角波，占空比 50\%。
+\end{enumerate}
+
+对于每一种波形，保存波形图并测量频率、低电平、高电平。
+
+\section{实验步骤}
+
+\subsection{探头校准}
+
+打开电源，将示波器探头的钩子连接到 Demo2（探头补偿）端子上，探头的黑夹子连接到中间接地端子，依次按下 Auto Scale（自动调整）键、通道键、“探头”、“无源探头检查”。如果是过补偿和欠补偿 ，要使用专用工具调整探头上的微调电容，以获得尽可能平的脉冲。
+
+\subsection{生成波形}
+
+选取示波器的“Wave Gen”功能，由屏幕提示，用旋钮调节波形类型、频率、高电平、低电平、占空比即可。需要注意的是，最终的 4V、0-5V 等应以测量为准，而非以设定值为准。
+
+\subsection{调整探头}
+
+调整探头的衰减设置，并在示波器的探头参数设置中调整到相同的衰减比率。信号超过 40V 或频率超过 500 kHz 时要使用“×10”的探头，因此波形（1）、（3）使用“×1”探头，波形（2）使用“×10”探头。
+
+\subsection{测量波形}
+
+将探头的地线夹子与内置信号发生器输出端口的黑夹子相连，探头的输入信号与内置信号发生器输出端口的红夹子相连。使用示波器的“Auto Scale”按钮来自动定标波形图，使用示波器的“Meas”按钮，设置测量菜单里的相应参数，测量所需的参数。
+
+\subsection{保存波形}
+
+使用“Save/Recall”功能或者手机拍下屏幕, 保存波形图和波形数据。
+
+\section{实验结果}
+
+\begin{figure}
+    \includegraphics[width = \textwidth]{img/1.jpeg}
+    \caption{100kHz 正弦波，占空比 50\%，直流电平为零，峰峰值 4V}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width = \textwidth]{img/2.jpeg}
+    \caption{1MHz TTL 方波，占空比 50\%}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width = \textwidth]{img/3.jpeg}
+    \caption{100Hz，0-5V 三角波，占空比 50\%}
+\end{figure}
+
+\end{document}

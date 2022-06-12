@@ -1,0 +1,86 @@
+\documentclass[a4paper]{article}
+\usepackage{ctex}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+
+\pagestyle{headings}
+
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+
+\begin{document}
+\title{与非门电路的测试}
+\author{梁业升 2019010547（计03）}
+
+\maketitle
+
+\section{实验目的}
+
+加深对与非门基本特性和主要参数的理解，掌握主要参数的测试方法。
+
+\section{实验原理}
+
+\subsection{CMOS与非门的平均延迟时间$t_{{pd}}$}
+
+输入信号（方波脉冲）接到与非门的两个输入上，输出 $v_O$ 是与非门输出结果，是 $v_{I}$ 的反向波形，它们之间的延迟时间即为与非门的延迟时间。
+
+\subsection{CMOS与非门的电压传输特性}
+
+电压传输特性是指输出电压 $v_{O}$ 与输入电压 $v_{I}$ 的函数关系，可以从曲线上直接读出一些静态参数：
+
+\begin{enumerate}
+    \item 输出高电平 $V_{OH}$
+    \item 输出低电平 $V_{OL}$
+    \item 关门电平 $V_{OFF}$：使电路输出处于高电平状态所允许的最大输入电压
+    \item 开门电平 $V_{ON}$：使电路输出处于低电平状态所允许的最小输入电压
+    \item 高电平噪声容限电压 $V_{NH}=V_{OH_{min}}-V_{ON}$，表示输入为高电平时所允许噪声电压的最大值
+    \item 低电平噪声容限电压 $V_{NL}=V_{OFF}-V_{OL_{max}}$，表示输入为低电平时所允许噪声电压的最大值
+\end{enumerate}
+
+\subsection{TTL与非门的平均延迟时间$t_{pd}$}
+
+由于 TTL 与非门的平均延迟时间很小，需要将几个与非门串联起来测量总的平均延迟时间。
+
+\subsection{TTL与非门的电压传输特性}
+
+与 CMOS 与非门相同。
+
+\section{实验内容及要求}
+
+\begin{enumerate}
+    \item 测量 CMOS 与非门 CD4011 的平均延迟时间，测量电路如课本图 4.1(b) 所示，其中输入电压 $v_1$ 可选择低电平为 0V，高电平为 5V，频率为 1MHz 的方波信号。
+    \item 测量 CMOS 与非门 CD4011 的电压传输特性，测量电路如课本图 4.3 所示，其中输入电压 $v_1$ 可选择低电平为 0V，高电平为 5V，频率为 100Hz 的三角波信号。
+    \item 测量 TTL 与非门 74LS00 的平均延迟时间 $t_{{pd}}$，测量电路如课本图 4.4(a) 所示，其中信号是信号发生器的TTL输出端产生的频率为2MHz的方波信号。
+    \item 测量TTL与非门74LS00的电压传输特性，测量电路与输入信号与 2 相同。
+\end{enumerate}
+
+\section{思考题}
+
+\textbf{应如何处理TTL与非门和CMOS与非门的多余输入端？}
+
+应将其全部接地，使其有确定的电平。
+
+\section{实验结果}
+
+\begin{figure}
+    \includegraphics[width = \textwidth]{img/1.jpeg}
+    \caption{CMOS 与非门 CD4011 的平均延迟时间}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width = \textwidth]{img/2.jpeg}
+    \caption{CMOS 与非门 CD4011 的电压传输特性}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width = \textwidth]{img/3.jpeg}
+    \caption{TTL 与非门 74LS00 的平均延迟时间 $t_{{pd}}$}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width = \textwidth]{img/4.jpeg}
+    \caption{TTL与非门74LS00的电压传输特性}
+\end{figure}
+
+
+\end{document}
